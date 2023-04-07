@@ -9,8 +9,13 @@ import {
 import {
   getFirestore,
   doc,
+  getDocs,
   setDoc,
   collection,
+  query,
+  orderBy,
+  limit,
+  updateDoc,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
 import {
@@ -38,6 +43,7 @@ const app = initializeApp(firebaseConfig);
 // const db = firebase.firestore();
 const storage = getStorage();
 const db = getFirestore();
+const RANK = "rank";
 
 // 버튼이 클릭이 되면 function이 실행이 되도록 합니다.
 document.querySelector("#send").addEventListener("click", async function () {
@@ -58,6 +64,7 @@ document.querySelector("#send").addEventListener("click", async function () {
     time: time,
     urlBefore: "",
     urlAfter: "",
+    isApproved: false,
   };
 
   async function uploadBeforePromise() {
@@ -204,3 +211,34 @@ document.querySelector("#send").addEventListener("click", async function () {
   };
   upload();
 });
+let count = 1;
+const getData = async () => {
+  //   const q = query(collection(db, "data"), limit(10));
+  const q = query(
+    collection(db, "users"),
+    orderBy("points", "desc"),
+    limit(10)
+  );
+  console.log(q);
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+
+    let rank = document.createElement("div");
+    let point = document.createElement("div");
+    let email = document.createElement("div");
+
+    point.innerText = count + "." + " Points: " + doc.data().points;
+    count++;
+    email.innerText = "Email: " + doc.id;
+
+    rank.appendChild(point);
+    rank.appendChild(email);
+
+    rank.classList.add(RANK);
+    document.getElementById("ranking").appendChild(rank);
+  });
+};
+getData();

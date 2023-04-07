@@ -40,11 +40,15 @@ document.querySelector("#register").addEventListener("click", function () {
   const pass = document.querySelector("#pw-new").value;
 
   createUserWithEmailAndPassword(auth, email, pass)
-    .then((userCredential) => {
-      // Signed in
+    .then(async (userCredential) => {
       const user = userCredential.user;
-      console.log("Signed up Succesfully!");
+      // create firebase
+      const userRef = doc(db, "users", email);
+      await setDoc(userRef, {
+        points: 0,
+      });
       window.location.href = "index.html";
+      console.log("Signed up Succesfully!");
     })
     .catch((error) => {
       const errorCode = error.code;
