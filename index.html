@@ -40,9 +40,9 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Mustang Makeover</a></h1>
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid me-2 img-logo">Mustang Makeover</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+       <!-- <a href="index.html" class="logo me-auto"></a> -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -192,9 +192,9 @@ The website has four pages: the home page, the sign-up page, the Mustang Makeove
 
                   <center>
     <h5>Upload and Earn Points!</h5>
-                <h6 class="mt-3">Before</h6>
+                <h6 class="mt-3">Image for Before</h6>
                 <input class="form-control mx-2 mt-3 sum-email" type="file" id="before">
-                <h6 class="mt-4">After</h6>
+                <h6 class="mt-4">Image for After</h6>
                 <input class="form-control mx-2 mt-3 sum-email" type="file" id="after">
                 
                 
@@ -262,10 +262,24 @@ The website has four pages: the home page, the sign-up page, the Mustang Makeove
   <!-- ======= Leaderboard Section ======= -->
   
     <section id="leaderboard" class="leaderboard">
-      <div class="container"><div class="row content px-5">
-        <h2> <span class="text-red mx-2">Leaderboard</span></h2>
-        <div id="ranking" class="ms-2"></div>
-      </div></div>
+      <div class="container">
+        <div class="row content px-5">
+          <h2> <span class="text-red mx-2">Leaderboard</span></h2>
+          <div class="table-responsive">
+
+          <table class="table table-striped">
+            <thead>
+              <th>Ranking</th>
+              <th>Email</th>
+              <th>Point</th>
+            </thead>
+            
+              <tbody id="ranking"></tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
     
     </section>
    

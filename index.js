@@ -226,19 +226,23 @@ const getData = async () => {
     // doc.data() is never undefined for query doc snapshots
     console.log(doc.id, " => ", doc.data());
 
-    let rank = document.createElement("div");
+    let rank = document.createElement("tr");
     rank.classList.add('rank');
-    let point = document.createElement("div");
+    let point = document.createElement("td");
     point.classList.add('point');
-    let email = document.createElement("div");
+    let email = document.createElement("td");
     email.classList.add('email');
+    let ranki = document.createElement("td");
 
-    point.innerText = count + "." + " Points: " + doc.data().points;
+    point.innerText = doc.data().points;
+    
+    email.innerText = doc.id;
+    ranki.innerText = count;
     count++;
-    email.innerText = "Email: " + doc.id;
-
-    rank.appendChild(point);
+    rank.appendChild(ranki);
     rank.appendChild(email);
+    rank.appendChild(point);
+    
 
     rank.classList.add(RANK);
     document.getElementById("ranking").appendChild(rank);
