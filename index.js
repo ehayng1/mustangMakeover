@@ -239,23 +239,6 @@ const getData = async () => {
 
     rank.classList.add(RANK);
     document.getElementById("ranking").appendChild(rank);
-    const ctx = document.getElementById('chart').getContext('2d');
-    const chart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['A', 'B', 'C'],
-        datasets: [{
-          label: 'Easy as',
-          data: [1, 2, 3],
-        }],
-      },
-      options: {
-        indexAxis: 'y', // <-- here
-        responsive: true
-      }
-    });
   });
 };
-
-
-
+getData();
