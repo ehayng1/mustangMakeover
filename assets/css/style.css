@@ -707,6 +707,9 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
+.bg-font{
+  font-size: 16.5px;
+}
 
 /*--------------------------------------------------------------
 # JoinUs
@@ -720,7 +723,7 @@ section {
   text-transform: uppercase;
 }
 .joinUs .content p {
-  font-size: 25px;
+  font-size: 19px;
 
 }
 .joinUs .content a:hover {
@@ -1965,13 +1968,43 @@ canvas { background-color : #eee;
   position: relative;
 }
 
+.file-input input[type="file"] {
+    border-radius: 30px;
+}
+.f-s{
+  display: block;
+}
+.upload{
+  width: 180px !important;
+  border-radius: 30px;
+}
+.upload-img{
+  border-radius: 10px;
+  height:390px;
+  margin: auto;
+}
+.text-it{
+  font-style: italic;
+}
+.intro-img{
+  border-radius: 10px;
+}
+.card-intro{
+text-align: justify;
+}
 .blog .sidebar .search-form form input[type="text"] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
   width: calc(100% - 40px);
 }
+/*.sum-email{
+  width:420px;
+}*/
 
+.file-input{
+  border-radius: 20px;
+}
 .blog .sidebar .search-form form button {
   position: absolute;
   top: 0;

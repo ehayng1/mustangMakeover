@@ -227,8 +227,11 @@ const getData = async () => {
     console.log(doc.id, " => ", doc.data());
 
     let rank = document.createElement("div");
+    rank.classList.add('rank');
     let point = document.createElement("div");
+    point.classList.add('point');
     let email = document.createElement("div");
+    email.classList.add('email');
 
     point.innerText = count + "." + " Points: " + doc.data().points;
     count++;
